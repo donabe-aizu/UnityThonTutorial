@@ -16,7 +16,8 @@ public class PlayerTest : MonoBehaviour
     
     void Update()
     {
-        _rigidbody.AddForce(Vector3.forward * Input.GetAxis("Vertical") * speed);
-        _rigidbody.AddForce(Vector3.right * Input.GetAxis("Horizontal") * speed);
+        float x = Input.GetAxis("Horizontal") * speed;
+        float z = Input.GetAxis("Vertical") * speed;
+        _rigidbody.AddForce(x,0,z);
     }
 }
