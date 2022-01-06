@@ -6,14 +6,14 @@ public class ItemInstantiate : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private Transform points;
-    private List<Transform> _pointsList = new List<Transform>();
+    public List<Transform> pointsList = new List<Transform>();
     void Start()
     {
         for (int i = 0; i < points.childCount; i++)
         {
-            _pointsList.Add(points.GetChild(i));
+            pointsList.Add(points.GetChild(i));
         }
-        foreach (Transform point in _pointsList)
+        foreach (Transform point in pointsList)
         {
             Instantiate(prefab, point.position, prefab.transform.rotation);
         }

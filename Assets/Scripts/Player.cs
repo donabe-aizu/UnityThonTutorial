@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Text scoreText;
+    [SerializeField] private Text resultText;
+    [SerializeField] private ItemInstantiate itemInstantiate;
     [SerializeField] private float speed = 1;
     
     private Rigidbody _rigidbody;
@@ -15,6 +17,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         _rigidbody = this.GetComponent<Rigidbody>();
+        
+        resultText.gameObject.SetActive(false);
+        
         SetScoreText();
     }
     
@@ -38,5 +43,9 @@ public class Player : MonoBehaviour
     private void SetScoreText()
     {
         scoreText.text = "score:" + _count;
+        if (_count >= itemInstantiate.pointsList.Count)
+        {
+            resultText.gameObject.SetActive(true);
+        }
     }
 }
