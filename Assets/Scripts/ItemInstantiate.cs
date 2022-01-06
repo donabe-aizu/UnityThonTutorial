@@ -6,7 +6,7 @@ public class ItemInstantiate : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private Transform points;
-    private List<Transform> _pointsList;
+    private List<Transform> _pointsList = new List<Transform>();
     void Start()
     {
         for (int i = 0; i < points.childCount; i++)
