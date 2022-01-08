@@ -1,25 +1,26 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class InputTest : MonoBehaviour
 {
     public Text scoreText;
     public Text resultText;
+    public Text timeText;
     public AudioClip se1;
-    public ItemInstantiate itemInstantiate;
     public float speed = 1;
+    public float countdown = 10f;
     
     private Rigidbody _rigidbody;
     private AudioSource _audioSource;
     private int _count = 0;
+    private bool _isGameFinish = false;
     
     void Start()
     {
         _rigidbody = this.GetComponent<Rigidbody>();
-
+        
         _audioSource = this.GetComponent<AudioSource>();
         
         resultText.gameObject.SetActive(false);
@@ -32,11 +33,13 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * speed;
         float z = Input.GetAxis("Vertical") * speed;
         _rigidbody.AddForce(x,0,z);
+        
+        CountDown();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Item") && !_isGameFinish)
         {
             _count++;
             SetScoreText();
@@ -48,9 +51,23 @@ public class Player : MonoBehaviour
     private void SetScoreText()
     {
         scoreText.text = "score:" + _count;
-        if (_count >= itemInstantiate.pointsList.Count)
+    }
+
+    private void CountDown()
+    {
+        if (countdown<0)
         {
-            resultText.gameObject.SetActive(true);
+            _isGameFinish = true;
+            timeText.gameObject.SetActive(false);//ゲーム終了時に見えなくする
+            scoreText.gameObject.SetActive(false);//ゲーム終了時に見えなくする
+            resultText.gameObject.SetActive(true);//ゲーム終了時に見えるようにする
+            resultText.text = scoreText.text;//ゲーム終了時のスコアをでかでかと出す
+        }
+        else 
+        {
+            //カウントダウン
+            countdown -= Time.deltaTime;
+            timeText.text = countdown.ToString("F1") + "秒";
         }
     }
 }

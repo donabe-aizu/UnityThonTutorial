@@ -7,7 +7,7 @@ public class ItemInstantiate : MonoBehaviour
     [SerializeField] private GameObject prefab;
     [SerializeField] private Transform points;
     public List<Transform> pointsList = new List<Transform>();
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < points.childCount; i++)
         {
@@ -15,7 +15,7 @@ public class ItemInstantiate : MonoBehaviour
         }
         foreach (Transform point in pointsList)
         {
-            Instantiate(prefab, point.position, prefab.transform.rotation);
+            Instantiate(prefab, point.position, prefab.transform.rotation, this.transform);
         }
     }
     
