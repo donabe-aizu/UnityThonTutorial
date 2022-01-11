@@ -1,0 +1,34 @@
+{
+    "name": "ActionTest",
+    "maps": [
+        {
+            "name": "Keybord",
+            "id": "c2356026-0d67-4089-9394-3f644f5c17cb",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "8f079216-16a1-40f8-b899-0d9314619138",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f9001d84-0fcb-4475-b790-ce4161d5792a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

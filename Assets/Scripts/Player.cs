@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public AudioClip se1;
     public ItemInstantiate itemInstantiate;
     public float speed = 1;
+    public GameObject gameobj;
     
     private Rigidbody _rigidbody;
     private AudioSource _audioSource;
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
     private void SetScoreText()
     {
         scoreText.text = "score:" + _count;
-        if (_count >= itemInstantiate.pointsList.Count)
+        if (_count >= gameobj.transform.childCount)
         {
             resultText.gameObject.SetActive(true);
         }

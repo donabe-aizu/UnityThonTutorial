@@ -1148,8 +1148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 167.5, y: -37.81}
-  m_SizeDelta: {x: 221.85, y: 30}
+  m_AnchoredPosition: {x: 170.5, y: -37.809998}
+  m_SizeDelta: {x: 221.84998, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984703859
 MonoBehaviour:
@@ -1184,7 +1184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: aaaaaaaaaaaaa
 --- !u!222 &1984703860
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1252,6 +1252,14 @@ PrefabInstance:
       propertyPath: se1
       value: 
       objectReference: {fileID: 8300000, guid: af5b3ddd7f2587643820fa58c4fb6d79, type: 3}
+    - target: {fileID: 8702708988023993249, guid: f10d59b73f880034e8649d8c1931dd4d, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702708988023993249, guid: f10d59b73f880034e8649d8c1931dd4d, type: 3}
+      propertyPath: gameobj
+      value: 
+      objectReference: {fileID: 845985934}
     - target: {fileID: 8702708988023993249, guid: f10d59b73f880034e8649d8c1931dd4d, type: 3}
       propertyPath: scoreText
       value: 
